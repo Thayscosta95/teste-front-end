@@ -12,9 +12,16 @@ const categories = [
 
 export function Categories() {
   return (
-    <section className="categories" aria-label="Categorias de produtos">
+    <section
+      id="categorias"
+      className="categories"
+      aria-label="Categorias de produtos"
+    >
       {categories.map((category, index) => (
-        <div className="categories__item" key={category.name}>
+        <div
+          className="categories__item"
+          key={category.name}
+        >
           <div
             className={`categories__icon ${
               index === 0 ? "categories__icon--active" : ""

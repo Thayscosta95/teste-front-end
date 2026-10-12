@@ -5,6 +5,8 @@ export default defineConfig({
   plugins: [react()],
 
   server: {
+    open: true,
+
     proxy: {
       "/api/econverse": {
         target: "https://app.econverse.com.br",
