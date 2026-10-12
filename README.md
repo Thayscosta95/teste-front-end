@@ -1,75 +1,86 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Desafio Front-End — Econverse
 
-Currently, two official plugins are available:
+Projeto desenvolvido como parte do desafio técnico Front-End da Econverse, com o objetivo de reproduzir uma interface de e-commerce baseada no layout disponibilizado no Figma.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Demonstração
 
-## React Compiler
+Acesse o projeto publicado:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+https://teste-front-end-snowy-beta.vercel.app/
 
-## Expanding the ESLint configuration
+## Tecnologias utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- Sass (SCSS)
+- CSS Grid e Flexbox
+- Git e GitHub
+- Vercel
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Funcionalidades
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Interface de e-commerce baseada no Figma
+- Componentes reutilizáveis
+- Listagem de produtos consumidos de um JSON externo
+- Carrossel de produtos
+- Popup com informações do produto selecionado
+- Controle de quantidade no popup
+- Layout responsivo
+- Seções de categorias, parceiros e marcas
+- Formulário visual de newsletter
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Como executar localmente
 
+Clone o repositório:
+
+```bash
+git clone https://github.com/Thayscosta95/teste-front-end.git
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Acesse a pasta:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+cd teste-front-end
 ```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Inicie o servidor:
+
+```bash
+npm run dev
+```
+
+Abra o endereço indicado no terminal.
+
+## Validação
+
+Para verificar o código:
+
+```bash
+npm run lint
+```
+
+Para gerar a versão de produção:
+
+```bash
+npm run build
+```
+
+## Integração com a API
+
+Os produtos são carregados dinamicamente do JSON oficial da Econverse.
+
+Durante o desenvolvimento, o Vite utiliza um proxy para encaminhar as requisições. Na versão publicada, a Vercel utiliza regras de rewrite definidas em `vercel.json`.
+
+## Observações
+
+A interface foi desenvolvida com React, TypeScript e Sass, sem bibliotecas prontas de componentes visuais.
+
+O botão de compra do popup representa a interação visual solicitada no desafio; não há integração com checkout ou processamento de pagamentos.
